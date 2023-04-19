@@ -47,39 +47,20 @@ function addCityToDOM(id, city, description, image) {
   // TODO: MODULE_CITIES
   // 1. Populate the City details and insert those details into the DOM
 
-  
   let cardBlock = document.createElement('div');
-  cardBlock.classList('col-6 col-md-4');
+  cardBlock.className ="main col-3 col-md-3"
 
-  console.log(cardBlock)
-
-  // divBlock.innerHTML =
-  //   `<a href="pages/adventures/?city=${id}" id="${id}">
-  //     <div class="title">
-  //       <div class="title-text">
-  //         <h2>${city}</h2>
-  //         <p>${description}</p>
-  //       </div>
-  //       <img src="${image}"></img>
-  //     </div>
-  //   </a>`;
-
-  let card = document.createElement('div');
-
-  card.innerHTML =  `
-  <a href="pages/adventures/?city=${id}" id="${id}">
-      <div class="title">
-        <div class="title-text">
+  cardBlock.innerHTML =
+    `<a href="pages/adventures/?city=${id}" id="${id}">
+      <div class="tile">
+        <div class="tile-text">
           <h2>${city}</h2>
           <p>${description}</p>
         </div>
         <img src="${image}"></img>
       </div>
-    </a>
-  `
-
-  cardBlock.appendChild(card);
-
+    </a>`;
+  
   let dataBlock = document.getElementById('data');
   dataBlock.appendChild(cardBlock);
 
