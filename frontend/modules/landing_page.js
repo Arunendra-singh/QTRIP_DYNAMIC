@@ -46,30 +46,42 @@ async function fetchCities() {
 function addCityToDOM(id, city, description, image) {
   // TODO: MODULE_CITIES
   // 1. Populate the City details and insert those details into the DOM
-  let divBlock = document.createElement('div');
-  divBlock.classList.add('col-md-3');
+
+  
+  let cardBlock = document.createElement('div');
+  cardBlock.classList('col-6 col-md-4');
+
+  console.log(cardBlock)
+
+  // divBlock.innerHTML =
+  //   `<a href="pages/adventures/?city=${id}" id="${id}">
+  //     <div class="title">
+  //       <div class="title-text">
+  //         <h2>${city}</h2>
+  //         <p>${description}</p>
+  //       </div>
+  //       <img src="${image}"></img>
+  //     </div>
+  //   </a>`;
 
   let card = document.createElement('div');
 
-  card.id = id;
-  card.classList.add('card');
+  card.innerHTML =  `
+  <a href="pages/adventures/?city=${id}" id="${id}">
+      <div class="title">
+        <div class="title-text">
+          <h2>${city}</h2>
+          <p>${description}</p>
+        </div>
+        <img src="${image}"></img>
+      </div>
+    </a>
+  `
 
-  let name = document.createElement('h2');
-  name.textContent = city;
-  card.appendChild(name);
-
-  let des = document.createElement('p');
-  des.textContent = description;
-  card.appendChild(des);
-
-  let img = document.createElement('img');
-  img.src = image;
-  card.appendChild(img);
-
-  divBlock.appendChild(card);
+  cardBlock.appendChild(card);
 
   let dataBlock = document.getElementById('data');
-  dataBlock.appendChild(divBlock);
+  dataBlock.appendChild(cardBlock);
 
 }
 
