@@ -5,13 +5,27 @@ import config from "../conf/index.js";
 function getCityFromURL(search) {
   // TODO: MODULE_ADVENTURES
   // 1. Extract the city id from the URL's Query Param and return it
-
+  
+  let obj = new URLSearchParams(search)
+  return obj.get('city')
 }
 
 //Implementation of fetch call with a paramterized input based on city
 async function fetchAdventures(city) {
   // TODO: MODULE_ADVENTURES
   // 1. Fetch adventures using the Backend API and return the data
+
+  try {
+  
+    let res = await fetch(config.backendEndpoint + `/adventures?city=${city}`)
+    let adventures = await res.json();
+    return adventures;
+  
+  } catch (err) {
+    console.log(err);
+  
+    return null;
+  }
 
 }
 
