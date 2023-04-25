@@ -33,7 +33,33 @@ async function fetchAdventures(city) {
 function addAdventureToDOM(adventures) {
   // TODO: MODULE_ADVENTURES
   // 1. Populate the Adventure Cards and insert those details into the DOM
+  adventures.forEach(({id, name, costPerHead, duration, category, currency, image}) => {
 
+    let card = document.createElement('div')
+
+    card.className = 'col-6 col-lg-3 position-relative';
+
+    card.innerHTML = 
+    `<a href="detail/?adventure=${id}" id="${id}">
+      <div class="category-banner">
+        ${category}
+      </div>
+      <div class="activity-card">
+          <img src="${image}" alt="">
+          <div class="d-flex w-100 justify-content-between px-2">
+              <h3>${name}</h3>
+              <h3>${currency}costPerHead${costPerHead}</h3>
+          </div>
+
+          <div class="d-flex w-100 justify-content-between px-2">
+            <h5>Duration</h5>
+            <h5>${duration} Hours</h5>
+        </div>
+      </div>
+    </a>`;
+    document.getElementById('data').appendChild(card);
+    
+  })
 }
 
 //Implementation of filtering by duration which takes in a list of adventures, the lower bound and upper bound of duration and returns a filtered list of adventures.

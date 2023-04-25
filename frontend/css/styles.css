@@ -142,6 +142,10 @@ footer {
   /* transform: scale(1.1); */
 }
 
+.activity-card h3 {
+  font-size: 16px;
+}
+
 /* activity-detail page css */
 
 .adventure-detail-card {
