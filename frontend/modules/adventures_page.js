@@ -8,6 +8,7 @@ function getCityFromURL(search) {
   
   let obj = new URLSearchParams(search)
   return obj.get('city')
+
 }
 
 //Implementation of fetch call with a paramterized input based on city
@@ -27,12 +28,16 @@ async function fetchAdventures(city) {
     return null;
   }
 
+
 }
 
 //Implementation of DOM manipulation to add adventures for the given city from list of adventures
 function addAdventureToDOM(adventures) {
   // TODO: MODULE_ADVENTURES
-  // 1. Populate the Adventure Cards and insert those details into the DOM
+  // 1. Populate the Adventure Cards and insert those details into the DOMclear
+
+  document.getElementById('data').textContent = "";
+
   adventures.forEach(({id, name, costPerHead, duration, category, currency, image}) => {
 
     let card = document.createElement('div')
@@ -66,7 +71,9 @@ function addAdventureToDOM(adventures) {
 function filterByDuration(list, low, high) {
   // TODO: MODULE_FILTERS
   // 1. Filter adventures based on Duration and return filtered list
+  console.log(list, low, high)
 
+  return list.filter((adv) => adv.duration >= low && adv.duration <= high)
 }
 
 //Implementation of filtering by category which takes in a list of adventures, list of categories to be filtered upon and returns a filtered list of adventures.
@@ -74,6 +81,7 @@ function filterByCategory(list, categoryList) {
   // TODO: MODULE_FILTERS
   // 1. Filter adventures based on their Category and return filtered list
 
+  return list.filter(adv => categoryList.find(adv.category))
 }
 
 // filters object looks like this filters = { duration: "", category: [] };
@@ -88,8 +96,22 @@ function filterFunction(list, filters) {
   // 1. Handle the 3 cases detailed in the comments above and return the filtered list of adventures
   // 2. Depending on which filters are needed, invoke the filterByDuration() and/or filterByCategory() methods
 
+  if (filters.duration && filters.category.length){
+    let fileredList = filterByDuration(list, parseInt(filters.duration.split('_')[0]), parseInt(filters.duration.split('_')[1]))
 
-  // Place holder for functionality to work in the Stubs
+    return filterByCategory(list, filters.category);
+  }
+
+  if (filters.duration){
+
+    return filterByDuration(list, parseInt(filters.duration.split('_')[0]), parseInt(filters.duration.split('_')[1]));
+  }
+
+  if (filters.category.length){
+
+    return filterByCategory(filteredList, filters.category);
+  }
+
   return list;
 }
 

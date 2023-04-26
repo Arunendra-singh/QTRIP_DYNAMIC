@@ -4,6 +4,7 @@ async function init() {
   // console.log('from init()');
   // console.log(config);
   debugger;
+
   //Fetches list of all cities along with their images and description
   let cities = await fetchCities();
 
@@ -16,8 +17,6 @@ async function init() {
     
   }
 }
-
-
 
 //Implementation of fetch call
 async function fetchCities() {
@@ -40,6 +39,7 @@ async function fetchCities() {
     return null;
   }
   
+
 }
 
 //Implementation of DOM manipulation to add cities
@@ -63,6 +63,7 @@ function addCityToDOM(id, city, description, image) {
   
   let dataBlock = document.getElementById('data');
   dataBlock.appendChild(cardBlock);
+
 
 }
 

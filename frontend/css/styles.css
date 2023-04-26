@@ -30,6 +30,7 @@ footer {
   /* height: 2.5rem;   */
 }
 
+
 .main {
   margin-bottom: 15px;
 }
@@ -79,6 +80,8 @@ footer {
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
+  letter-spacing: 2px;
+
 }
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
