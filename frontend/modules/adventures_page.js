@@ -71,17 +71,15 @@ function addAdventureToDOM(adventures) {
 function filterByDuration(list, low, high) {
   // TODO: MODULE_FILTERS
   // 1. Filter adventures based on Duration and return filtered list
-  console.log(list, low, high)
-
-  return list.filter((adv) => adv.duration >= low && adv.duration <= high)
+  
+  return list.filter((adventures) => adventures.duration >= low && adventures.duration <= high)
 }
 
 //Implementation of filtering by category which takes in a list of adventures, list of categories to be filtered upon and returns a filtered list of adventures.
 function filterByCategory(list, categoryList) {
   // TODO: MODULE_FILTERS
   // 1. Filter adventures based on their Category and return filtered list
-
-  return list.filter(adv => categoryList.find(adv.category))
+  return list.filter(adv => categoryList.indexOf(adv.category) > -1)
 }
 
 // filters object looks like this filters = { duration: "", category: [] };
@@ -97,19 +95,19 @@ function filterFunction(list, filters) {
   // 2. Depending on which filters are needed, invoke the filterByDuration() and/or filterByCategory() methods
 
   if (filters.duration && filters.category.length){
-    let fileredList = filterByDuration(list, parseInt(filters.duration.split('_')[0]), parseInt(filters.duration.split('_')[1]))
-
-    return filterByCategory(list, filters.category);
+    let filteredList = filterByDuration(list, parseInt(filters.duration.split('-')[0]), parseInt(filters.duration.split('-')[1]))
+    return filterByCategory(filteredList, filters.category)
   }
 
   if (filters.duration){
-
-    return filterByDuration(list, parseInt(filters.duration.split('_')[0]), parseInt(filters.duration.split('_')[1]));
+    let choice = filters.duration.split('-');
+    
+    return filterByDuration(list, parseInt(choice[0]), parseInt(choice[1]));
   }
 
   if (filters.category.length){
 
-    return filterByCategory(filteredList, filters.category);
+    return filterByCategory(list, filters.category);
   }
 
   return list;
@@ -119,7 +117,7 @@ function filterFunction(list, filters) {
 function saveFiltersToLocalStorage(filters) {
   // TODO: MODULE_FILTERS
   // 1. Store the filters as a String to localStorage
-
+  localStorage.setItem('filters', JSON.stringify(filters));
   return true;
 }
 
@@ -127,7 +125,9 @@ function saveFiltersToLocalStorage(filters) {
 function getFiltersFromLocalStorage() {
   // TODO: MODULE_FILTERS
   // 1. Get the filters from localStorage and return String read as an object
-
+  return JSON.parse(localStorage.getItem('filters'));
+  
+  // return JSON.parse(localStorage.getItem('filters'))
 
   // Place holder for functionality to work in the Stubs
   return null;
@@ -140,6 +140,14 @@ function getFiltersFromLocalStorage() {
 function generateFilterPillsAndUpdateDOM(filters) {
   // TODO: MODULE_FILTERS
   // 1. Use the filters given as input, update the Duration Filter value and Generate Category Pills
+  (filters.category).forEach((key) => {
+    let ele = document.createElement('div');
+    ele.className = "category-filter"
+    ele.innerHTML = `
+      <div>${key}</div>
+    `
+    document.getElementById('category-list').appendChild(ele);
+  })
 
 }
 export {
