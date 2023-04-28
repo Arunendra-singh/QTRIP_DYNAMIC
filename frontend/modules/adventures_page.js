@@ -5,10 +5,9 @@ import config from "../conf/index.js";
 function getCityFromURL(search) {
   // TODO: MODULE_ADVENTURES
   // 1. Extract the city id from the URL's Query Param and return it
-  
+
   let obj = new URLSearchParams(search)
   return obj.get('city')
-
 }
 
 //Implementation of fetch call with a paramterized input based on city
@@ -27,6 +26,7 @@ async function fetchAdventures(city) {
   
     return null;
   }
+
 
 
 }
@@ -65,6 +65,7 @@ function addAdventureToDOM(adventures) {
     document.getElementById('data').appendChild(card);
     
   })
+
 }
 
 //Implementation of filtering by duration which takes in a list of adventures, the lower bound and upper bound of duration and returns a filtered list of adventures.
@@ -73,6 +74,7 @@ function filterByDuration(list, low, high) {
   // 1. Filter adventures based on Duration and return filtered list
   
   return list.filter((adventures) => adventures.duration >= low && adventures.duration <= high)
+
 }
 
 //Implementation of filtering by category which takes in a list of adventures, list of categories to be filtered upon and returns a filtered list of adventures.
@@ -80,6 +82,7 @@ function filterByCategory(list, categoryList) {
   // TODO: MODULE_FILTERS
   // 1. Filter adventures based on their Category and return filtered list
   return list.filter(adv => categoryList.indexOf(adv.category) > -1)
+
 }
 
 // filters object looks like this filters = { duration: "", category: [] };
@@ -118,6 +121,7 @@ function saveFiltersToLocalStorage(filters) {
   // TODO: MODULE_FILTERS
   // 1. Store the filters as a String to localStorage
   localStorage.setItem('filters', JSON.stringify(filters));
+
   return true;
 }
 
@@ -128,6 +132,7 @@ function getFiltersFromLocalStorage() {
   return JSON.parse(localStorage.getItem('filters'));
   
   // return JSON.parse(localStorage.getItem('filters'))
+
 
   // Place holder for functionality to work in the Stubs
   return null;
@@ -148,6 +153,7 @@ function generateFilterPillsAndUpdateDOM(filters) {
     `
     document.getElementById('category-list').appendChild(ele);
   })
+
 
 }
 export {

@@ -39,7 +39,6 @@ async function fetchCities() {
     return null;
   }
   
-
 }
 
 //Implementation of DOM manipulation to add cities
@@ -63,7 +62,6 @@ function addCityToDOM(id, city, description, image) {
   
   let dataBlock = document.getElementById('data');
   dataBlock.appendChild(cardBlock);
-
 
 }
 

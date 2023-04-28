@@ -30,11 +30,14 @@ footer {
   /* height: 2.5rem;   */
 }
 
+<<<<<<< HEAD
 
 .main {
   margin-bottom: 15px;
 }
 
+=======
+>>>>>>> 13ea157302ae48d1eb3fd466abcd5e8c0fde7d8a
 .banner {
   height: 500px;
   width: 100%;
@@ -78,10 +81,14 @@ footer {
   position: absolute;
   z-index: 1;
   text-transform: uppercase;
+<<<<<<< HEAD
   letter-spacing: 1px;
   text-align: center;
   letter-spacing: 2px;
 
+=======
+  letter-spacing: 2px;
+>>>>>>> 13ea157302ae48d1eb3fd466abcd5e8c0fde7d8a
 }
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
@@ -145,10 +152,13 @@ footer {
   /* transform: scale(1.1); */
 }
 
+<<<<<<< HEAD
 .activity-card h3 {
   font-size: 16px;
 }
 
+=======
+>>>>>>> 13ea157302ae48d1eb3fd466abcd5e8c0fde7d8a
 /* activity-detail page css */
 
 .adventure-detail-card {

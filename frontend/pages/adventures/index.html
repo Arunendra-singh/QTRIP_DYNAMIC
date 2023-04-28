@@ -84,6 +84,7 @@
             </div>
             <!-- Display Adventures cards -->
 
+
             <div class="row" id="data"></div>
         </div>
     </div>
@@ -168,7 +169,6 @@
             addAdventureToDOM(filteredAdventures);
         }
 
-
         //executed when onChange() is triggered on category filter dropdown
         function selectCategory(event) {
             document.getElementById("data").textContent = "";
@@ -185,6 +185,7 @@
             let filteredAdventures = filterFunction(adventures, filters);
 
             console.log(filteredAdventures)
+
             addAdventureToDOM(filteredAdventures);
 
             // TODO: MODULE_FILTERS

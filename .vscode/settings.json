@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
     "liveServer.settings.port": 8083
     
     // "liveServer.settings.port": 8081
+=======
+    "liveServer.settings.port": 8081
+>>>>>>> 13ea157302ae48d1eb3fd466abcd5e8c0fde7d8a
 }
