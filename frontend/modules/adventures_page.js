@@ -65,6 +65,7 @@ function addAdventureToDOM(adventures) {
     document.getElementById('data').appendChild(card);
     
   })
+  // 1. Populate the Adventure Cards and insert those details into the DOM
 
 }
 
@@ -113,6 +114,8 @@ function filterFunction(list, filters) {
     return filterByCategory(list, filters.category);
   }
 
+
+  // Place holder for functionality to work in the Stubs
   return list;
 }
 
@@ -132,10 +135,6 @@ function getFiltersFromLocalStorage() {
   return JSON.parse(localStorage.getItem('filters'));
   
   // return JSON.parse(localStorage.getItem('filters'))
-
-
-  // Place holder for functionality to work in the Stubs
-  return null;
 }
 
 //Implementation of DOM manipulation to add the following filters to DOM :
