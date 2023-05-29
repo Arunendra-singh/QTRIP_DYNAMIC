@@ -4,6 +4,7 @@ import config from "../conf/index.js";
 async function fetchReservations() {
   // TODO: MODULE_RESERVATIONS
   // 1. Fetch Reservations by invoking the REST API and return them
+
   try {
     let res = await fetch(config.backendEndpoint + "/reservations");
     let data = await res.json();
@@ -14,12 +15,14 @@ async function fetchReservations() {
   }
 
   // Place holder for functionality to work in the Stubs
+
 }
 
 //Function to add reservations to the table. Also; in case of no reservations, display the no-reservation-banner, else hide it.
 function addReservationToTable(reservations) {
   // TODO: MODULE_RESERVATIONS
   // 1. Add the Reservations to the HTML DOM so that they show up in the table
+
   console.log(reservations)
 
   if (reservations && reservations.length){
@@ -57,6 +60,7 @@ function addReservationToTable(reservations) {
 
     document.getElementById('reservation-table-parent').style.display = "none"
   }
+
   //Conditionally render the no-reservation-banner and reservation-table-parent
 
   /*

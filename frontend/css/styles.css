@@ -30,6 +30,7 @@ footer {
   /* height: 2.5rem;   */
 }
 
+
 .main {
   margin-bottom: 15px;
 }
@@ -77,6 +78,7 @@ footer {
   position: absolute;
   z-index: 1;
   text-transform: uppercase;
+
   letter-spacing: 1px;
   text-align: center;
   letter-spacing: 2px;
@@ -142,6 +144,7 @@ footer {
   -webkit-filter: brightness(50%);
   /* transform: scale(1.1); */
 }
+
 .activity-card h3 {
   font-size: 16px;
 }
