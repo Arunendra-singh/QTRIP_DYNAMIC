@@ -4,7 +4,7 @@ async function init() {
 
   // console.log('from init()');
   // console.log(config);
-  debugger;
+  //debugger;
 
 
   //Fetches list of all cities along with their images and description
