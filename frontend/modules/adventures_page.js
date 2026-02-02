@@ -16,7 +16,6 @@ async function fetchAdventures(city) {
   // TODO: MODULE_ADVENTURES
   // 1. Fetch adventures using the Backend API and return the data
 
-
   try {
   
     let res = await fetch(config.backendEndpoint + `/adventures?city=${city}`)
@@ -28,8 +27,6 @@ async function fetchAdventures(city) {
   
     return null;
   }
-
-
 
 }
 
